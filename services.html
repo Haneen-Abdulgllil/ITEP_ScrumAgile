@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Caesar Dressing", system-ui;
+  font-family: "Nova Square", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+:root {
+  --transition: 0.3s;
+  --main-color: #e23535;
+  --alt-main-color: #bf0000;
+  --second-color: #7b66ff;
+  --alt-second-color: #5a40ff;
+}
+
+#title {
+  width: fit-content;
+  margin: 0 auto 60px;
+  font-weight: 600;
+  position: relative;
+}
+
+#title::after {
+  content: "";
+  background: var(--main-color);
+  width: 80%;
+  height: 5px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 6px;
+}
+#title:hover::after {
+  width: 100%;
+  transition: var(--transition);
+}
+/* Global settings ⬆️*/
+/* Container Media ⬇️*/
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* xs */
+@media (min-width: 475px) {
+  .container {
+    max-width: 475px;
+  }
+}
+/* sm */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+/* md */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+/* lg */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+/* xl */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+/* 2xl */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+/* Container Media ⬆️ */
+.tools {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f6f5f6;
+}
+.tools .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(413px, 1fr));
+  grid-gap: 30px;
+}
+.tools .box {
+  border-radius: 10px;
+  margin-bottom: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1280px) {
+  .tools .box {
+    padding: 35px 10px;
+    text-align: center;
+    justify-content: center;
+  }
+  .tools .box .box-img {
+    display: none;
+  }
+}
+.tools .box h3 {
+  margin: 0 0 15px 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.tools .box p {
+  color: #474747;
+  max-width: 545px;
+  margin-left: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+/* Green 🟢 */
+.tools .green:hover,
+.tools .green:hover .box-img::after {
+  background-color: rgb(43, 168, 43);
+  transition: var(--transition);
+}
+.tools .green:hover h3,
+.tools .green:hover p {
+  color: white;
+  transition: var(--transition);
+}
+.tools .box .box-img {
+  width: 500px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 10px 10px 0;
+}
+.tools .box .box-img img {
+  width: 100%;
+  height: 100%;
+}
+.tools .green {
+  box-shadow: 0px 0px 10px 0px rgb(43, 168, 43);
+}
+.tools .green .box-img::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(43, 168, 43, 0.3);
+}
+.tools .green .box-img::after {
+  content: "";
+  position: absolute;
+  background-color: #f6f5f6;
+  width: 139px;
+  height: calc(100% + 100px);
+  top: -81px;
+  left: -74px;
+  transform: rotate(32deg);
+}
+.tools .green h3 {
+  color: rgb(43, 168, 43);
+}
+/* Blue 🔵 */
+.tools .blue:hover,
+.tools .blue:hover .box-img::after {
+  background-color: rgb(47, 47, 214);
+  transition: var(--transition);
+}
+.tools .blue:hover h3,
+.tools .blue:hover p {
+  color: white;
+  transition: var(--transition);
+}
+
+.tools .blue {
+  box-shadow: 0px 0px 10px 0px rgb(47, 47, 214);
+}
+.tools .blue .box-img::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(47, 47, 214, 0.3);
+}
+.tools .blue .box-img::after {
+  content: "";
+  position: absolute;
+  background-color: #f6f5f6;
+  width: 139px;
+  height: calc(100% + 100px);
+  top: -81px;
+  left: -74px;
+  transform: rotate(32deg);
+}
+.tools .blue h3 {
+  color: rgb(47, 47, 214);
+}
+/* Red 😡 */
+.tools .red:hover,
+.tools .red:hover .box-img::after {
+  background-color: var(--main-color);
+  transition: var(--transition);
+}
+.tools .red:hover h3,
+.tools .red:hover p {
+  color: white;
+  transition: var(--transition);
+}
+
+.tools .red {
+  box-shadow: 0px 0px 10px 0px var(--main-color);
+}
+.tools .red .box-img::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: hsla(0, 75%, 55%, 0.3);
+}
+.tools .red .box-img::after {
+  content: "";
+  position: absolute;
+  background-color: #f6f5f6;
+  width: 139px;
+  height: calc(100% + 100px);
+  top: -81px;
+  left: -74px;
+  transform: rotate(32deg);
+}
+.tools .red h3 {
+  color: var(--main-color);
+}
+
+.tools .box:last-child {
+  text-align: center;
+  justify-content: center;
+  background-color: #c7c6c6;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="tools" id="tools">
+    <h1 id="title">Tools and Equipment</h1>
+    <div class="container">
+        <div class="box green">
+            <div class="info">
+                <h3>High-Pressure Washers</h3>
+                <p>
+                    We use advanced high-pressure washers that use minimal water and
+                    produce a gentle, but powerful flow of water.
+                </p>
+            </div>
+            <div class="box-img"><img src="https://images.pexels.com/photos/2127733/pexels-photo-2127733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></div>
+        </div>
+        <div class="box blue">
+            <div class="info">
+                <h3>Vacuum Cleaners</h3>
+                <p>
+                    To remove debris and dirt from the car's interior, we use
+                    high-powered vacuum cleaners with specialized attachments and
+                    filters that trap dirt .
+                </p>
+            </div>
+            <div class="box-img"><img src="https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></div>
+        </div>
+        <div class="box red">
+            <div class="info">
+                <h3>Polishing Machines</h3>
+                <p>
+                    Our team used advanced orbital polishers to buff and polish the
+                    car's exterior to restore its shine.
+                </p>
+            </div>
+            <div class="box-img"><img src="https://images.pexels.com/photos/1082655/pexels-photo-1082655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></div>
+        </div>
+        <div class="box">
+            <h3>steamcleaner andair compressor</h3>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
